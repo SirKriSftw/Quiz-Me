@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_28_154851) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_28_155317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_154851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "test_id"
+  end
+
+  create_table "test_savings", force: :cascade do |t|
+    t.integer "test_saver_id", null: false
+    t.integer "saved_test_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tests", force: :cascade do |t|
@@ -53,5 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_154851) do
 
   add_foreign_key "choices", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "test_savings", "tests", column: "saved_test_id"
+  add_foreign_key "test_savings", "users", column: "test_saver_id"
   add_foreign_key "tests", "users", column: "creator_id"
 end
