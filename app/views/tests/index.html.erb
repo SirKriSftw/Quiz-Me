@@ -1,6 +1,7 @@
 <h1> All Tests!</h1>
+<%= link_to "New test", new_test_path %> <br />
 
 <% @tests.each do |test|%>
-    <%= test.name %> <br />
+    <%= link_to test.name, test_path(test)%> <br />
     <%= test.description %> <br /> <br />
 <% end %>

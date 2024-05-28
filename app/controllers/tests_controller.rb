@@ -5,6 +5,10 @@ class TestsController < ApplicationController
         @tests = Test.all
     end
 
+    def show
+        @test = Test.find(params[:id])
+    end
+
     def new
         @test = Test.new
     end
