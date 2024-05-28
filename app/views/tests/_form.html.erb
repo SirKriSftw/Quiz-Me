@@ -1,0 +1,13 @@
+<%= form_with model: @test do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+    <% @test.errors.full_messages_for(:name).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+    <% @test.errors.full_messages_for(:description).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
+    <%= form.submit %>
+  <% end %>
