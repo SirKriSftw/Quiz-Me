@@ -4,5 +4,6 @@
 <%= @test.description %>
 
 <% if current_user == @test.creator %>
+    <%= button_to "Edit Test", edit_test_path(@test), method: :get %>
     <%= button_to "Delete Test", test_path(@test), method: :delete %>
 <% end %>
