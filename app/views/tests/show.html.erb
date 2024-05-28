@@ -2,3 +2,7 @@
 
 <h1> <%= @test.name %> </h1>
 <%= @test.description %>
+
+<% if current_user == @test.creator %>
+    <%= button_to "Delete Test", test_path(@test), method: :delete %>
+<% end %>

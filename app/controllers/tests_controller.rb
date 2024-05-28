@@ -24,6 +24,12 @@ class TestsController < ApplicationController
         end
     end
 
+    def destroy
+        @test = Test.find(params[:id])
+        @test.destroy
+        redirect_to root_path, status: :see_other
+    end
+
 
     private
     def test_params
