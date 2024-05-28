@@ -304,7 +304,6 @@ Devise.setup do |config|
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # ==> Configuration for :registerable
 
