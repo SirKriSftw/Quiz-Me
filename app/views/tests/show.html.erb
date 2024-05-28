@@ -9,10 +9,7 @@
 <%= @test.description %>
 
 <h2> Quesitons </h2>
-<% @questions.each do |question| %>
-    <%= question.question %> <br />
-    <%= question.answer %> <br /> <br />
-<% end %>
+<%= render @test.questions %>
 
 <% if current_user == @test.creator %>
     <h2>Add a question:</h2>

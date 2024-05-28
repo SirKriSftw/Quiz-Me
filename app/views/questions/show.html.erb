@@ -1,0 +1,12 @@
+<h1> Question </h1>
+
+<%= @question.question %>
+<%= @question.answer %> <br />
+
+<% @choices.each do |choice| %>
+    <%= choice.choice %>
+<% end %>
+
+<h2>Add a choice:</h2>
+<%= render 'choices/form', test: @test, question: @question, choice: @choice %>
+

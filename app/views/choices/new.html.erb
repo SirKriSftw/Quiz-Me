@@ -1,0 +1,8 @@
+<%= form_with(model: [@test, @question, @choice], url: test_question_choices_path(@test, @question), local: true) do |form| %>
+    <div>
+      <%= form.label :choice %>
+      <%= form.text_field :choice %>
+    </div>
+    
+    <%= form.submit %>
+  <% end %>

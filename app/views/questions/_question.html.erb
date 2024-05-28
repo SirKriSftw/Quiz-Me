@@ -1,0 +1,14 @@
+<p>
+  <strong>Question:</strong>
+  <%= question.question %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= question.answer %>
+</p>
+
+<%= render question.choices %>
+<% if current_user == @test.creator %>
+<%= render 'choices/form', test: @test, question: question, choice: Choice.new %>
+<% end %>

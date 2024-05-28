@@ -2,7 +2,13 @@ class QuestionsController < ApplicationController
     before_action :authenticate_user!
 
     def new
-        @question = Question.new
+        @question = Question.new   
+    end
+
+    def show
+        @test = Test.find(params[:test_id])
+        @question = Question.find(params[:id])
+        @choices = @question.choices
     end
 
     def create
