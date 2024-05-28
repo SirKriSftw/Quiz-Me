@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tests#index"
-  resources :tests
-  resources :questions
-  resources :choices
+  resources :tests do
+    resources :questions do
+      resources :choices
+    end
+  end
+  
 end

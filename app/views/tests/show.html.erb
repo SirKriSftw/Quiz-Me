@@ -1,9 +1,24 @@
-<%= link_to "<<<", tests_path %>
-
-<h1> <%= @test.name %> </h1>
-<%= @test.description %>
+<%= link_to "<<<", tests_path %> <br />
 
 <% if current_user == @test.creator %>
     <%= button_to "Edit Test", edit_test_path(@test), method: :get %>
     <%= button_to "Delete Test", test_path(@test), method: :delete %>
 <% end %>
+
+<h1> <%= @test.name %> </h1>
+<%= @test.description %>
+
+<h2> Quesitons </h2>
+<% @questions.each do |question| %>
+    <%= question.question %> <br />
+    <%= question.answer %> <br /> <br />
+<% end %>
+
+<% if current_user == @test.creator %>
+    <h2>Add a question:</h2>
+    <%= render 'questions/form' %>
+<% end %>
+
+
+
+
